@@ -10,18 +10,6 @@ public class Task10 {
         System.out.println("#10 SumSimpleNumbers.");
         System.out.println("Time start: " + start);
         for (long i = 2; i < 2000000; i++) {
-            if(i == 10000){
-                System.out.println(10000);
-            }
-            if(i == 100000){
-                System.out.println(100000);
-            }
-            if(i == 500000){
-                System.out.println(500000);
-            }
-            if(i == 1000000){
-                System.out.println(100000);
-            }
             if (Task7.isPrime(i)) {
                 res+=i;
             }

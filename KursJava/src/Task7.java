@@ -13,7 +13,7 @@ public class Task7 {
             res = true;
             return res;
         }
-        for (long i = 2; i <= n/2; i++){
+        for (long i = 2; i <= Math.sqrt(n); i++){
             if(n%i == 0){
                 return res;
             }
