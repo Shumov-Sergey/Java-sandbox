@@ -3,21 +3,21 @@
  */
 public class Task2 {
     public static void main(String[] args) {
-        int pred = 1;
-        int tek = 2;
-        int sled = 0;
+        int previous = 1;
+        int current = 2;
+        int next = 0;
         long sum = 2;
-        while (sled < 4000000){
-            sled = pred + tek;
-            if (sled > 4000000){
+        while (next < 4000000){
+            next = previous + current;
+            if (next > 4000000){
                break;
             }
-            if (sled%2 == 0){
-                sum+=sled;
+            if (next%2 == 0){
+                sum+=next;
             }
 
-            pred = tek;
-            tek = sled;
+            previous = current;
+            current = next;
         }
         System.out.println(sum);
 

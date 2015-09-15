@@ -8,7 +8,7 @@ import java.util.*;
 
 public class Task3 {
     // проверка на простоту
-    public boolean isPrime(String n){
+    public static boolean isPrime(String n){
         boolean res = false;
         BigInteger divider = new BigInteger("2");
         BigInteger num = new BigInteger(n);
@@ -26,7 +26,7 @@ public class Task3 {
         return res;
     }
     // вывод делителей числа
-    public ArrayList dividers(String n, boolean tmp){
+    public static ArrayList dividers(String n, boolean tmp){
         ArrayList dividers = new ArrayList();
         BigInteger divider = new BigInteger("2");
         BigInteger num = new BigInteger(n);
