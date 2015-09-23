@@ -12,8 +12,8 @@ public class Task4 {
 
     public ArrayList<Integer> aaa = new ArrayList();
 
-public boolean isPol(int a)
-{
+    public boolean isPol(int a)
+    {
 
     int razr = (int) java.lang.Math.floor( java.lang.Math.log10(a)  )+1;
 /*
@@ -40,7 +40,7 @@ public boolean isPol(int a)
 
     return a==l;
 }
-
+//Аналогичный комментарий, как к задаче 3
    public void getListPol()
    {
 
@@ -66,3 +66,5 @@ public boolean isPol(int a)
 
 
 }
+
+//А где main()?

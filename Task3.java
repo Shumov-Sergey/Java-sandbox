@@ -29,7 +29,15 @@ public class Task3
       return  isPrime;
     }
 
+/*Сейчас этот метод привязан к полю ааа(я бы не называл так переменные),
+Если понадобится в рамках ОДНОЙ задачи воспользоваться методом несколько раз, то
+в aaa будут записываться результаты всех вызовов.
+public ArrayList<Long> getDels(long num){} - так будет корректно
+    ArrayList<Long> aaa = this.getDels(a)
+    ArrayList<Long> bbb = this.getDels(b)
 
+
+ */
     public void getDels(long num)
     {
         double nn = java.lang.Math.round(java.lang.Math.sqrt(num));
@@ -37,7 +45,7 @@ public class Task3
         aaa.add(num);
         aaa.add((long) 1);
         long timestart=System.currentTimeMillis();
-       for (double i = 2; i<=nn; i++)
+        for (double i = 2; i<=nn; i++)
  //       for (double i = 2; i<=num; i++)
         {
 
