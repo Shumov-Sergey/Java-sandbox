@@ -70,6 +70,7 @@ public class Task5 {
     {
 
         Task5 m = new Task5();
+        long timestart=System.currentTimeMillis();
         for (int i = 2; i < 20; i++) {
             m.getDelis(i);
         }
@@ -81,6 +82,8 @@ public class Task5 {
             s = s * m.a3.get(i);
         }
 
+        long timeend=System.currentTimeMillis();
+        System.out.println("time:" + (timeend - timestart));
 
         System.out.println("s:" + s);
 
