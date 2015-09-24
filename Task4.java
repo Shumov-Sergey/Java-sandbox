@@ -1,4 +1,4 @@
-package com.company;
+//package com.company;
 
 
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ public boolean isPol(int a)
 
    public void getListPol()
    {
-
+       //proizv-транслит всегда плохо, multiply-хорошо
        ArrayList<Integer> proizv = new ArrayList();  // тут хранятся произведения множителей
 
        long timestart=System.currentTimeMillis();
@@ -57,7 +57,7 @@ public boolean isPol(int a)
    }
 
 
-
+//Тут тоже не запустится
     public void main()
 
     {

@@ -1,4 +1,4 @@
-package com.company;
+//package com.company;
 
 import java.util.ArrayList;
 import static java.util.Collections.*;
@@ -8,7 +8,6 @@ import static java.util.Collections.*;
  */
 public class Task3
 {
-
     public ArrayList<Long> aaa = new ArrayList();
 
     /** Определение простоты */
@@ -65,7 +64,6 @@ public class Task3
         System.out.println("число для анализа:"+num);
 
         ArrayList<Long> dels =   this.getDels(num);
-
         sort(dels);
         for (int j =dels.size()-1; j > 0 ; j--)
         {
@@ -79,7 +77,10 @@ public class Task3
 
     }
 
-
+/*Пробовал запустить?
+main method should be static
+чтоб обратиться к методу класса изнутри нужно использовать this.testArg(num);
+ */
         public void main(String[] args)
 
         {
