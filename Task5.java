@@ -5,11 +5,11 @@ import static java.lang.Math.*;
  * Created by Anton on 23.09.2015.
  */
 public class Task5 {
-
-    public static ArrayList<Integer> factorList = new ArrayList<>();
+    //аналогично
+    public static ArrayList<Integer> factorList = new ArrayList<Integer>();
 
     public static ArrayList<Integer> toFactor(int number) {
-        ArrayList<Integer> result = new ArrayList<>();
+        ArrayList<Integer> result = new ArrayList<Integer>();
         int i = 2;
 
         while(i <= number) {

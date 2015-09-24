@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Task4 {
-
+    //Аналогично
     public static ArrayList<Integer> palindromeList = new ArrayList();
 
     public static boolean isPalindrome(int num) {
