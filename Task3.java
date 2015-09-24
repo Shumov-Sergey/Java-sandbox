@@ -29,59 +29,70 @@ public class Task3
       return  isPrime;
     }
 
-/*Сейчас этот метод привязан к полю ааа(я бы не называл так переменные),
-Если понадобится в рамках ОДНОЙ задачи воспользоваться методом несколько раз, то
-в aaa будут записываться результаты всех вызовов.
-public ArrayList<Long> getDels(long num){} - так будет корректно
-    ArrayList<Long> aaa = this.getDels(a)
-    ArrayList<Long> bbb = this.getDels(b)
 
-
- */
-    public void getDels(long num)
+    public ArrayList<Long> getDels(long num)
     {
-        double nn = java.lang.Math.round(java.lang.Math.sqrt(num));
-        System.out.println("nn:" + nn);
-        aaa.add(num);
-        aaa.add((long) 1);
+        // ищем корень из исходного числа. В дальнейшем будем перебирать делители от 2 и до округленного значения корня исходного числа
+        double numSqrt = java.lang.Math.round(java.lang.Math.sqrt(num));
+        System.out.println("Округленное значение корня из исходного числа:" + numSqrt);
+        ArrayList<Long> dels = new ArrayList();
+
+        // число всегда делится на себя и на 1
+        dels.add(num);
+        dels.add((long) 1);
+
         long timestart=System.currentTimeMillis();
-        for (double i = 2; i<=nn; i++)
- //       for (double i = 2; i<=num; i++)
+       for (double i = 2; i<=numSqrt; i++)
         {
 
             if(num%i==0)
             {
-               aaa.add((long) i);
-               aaa.add((long) (num/i));
+                dels.add((long) i);
+                dels.add((long) (num/i));
 
             }
         }
 
         long timeend=System.currentTimeMillis();
         System.out.println("time:"+(timeend-timestart));
+        return dels;
     }
 
 
 
+    public void  testArg(Long num)
+    {
+        System.out.println("число для анализа:"+num);
 
-        public static void main(String[] args)
+        ArrayList<Long> dels =   this.getDels(num);
+
+        sort(dels);
+        for (int j =dels.size()-1; j > 0 ; j--)
+        {
+            if(isPrime((Long) dels.get(j)))
+            {
+                System.out.println("Максимальный делитель:"+dels.get(j));
+                System.out.println("____________________________________");
+                return;
+            }
+        }
+
+    }
+
+
+        public void main(String[] args)
 
         {
 
-            Task3 m = new Task3();
-            long a = new Long("600851475143");
-            //System.out.print(  m.isPrime( a ));
+                 long num = new Long("600851475143");
+                 testArg(num);
 
-            m.getDels(a);
-
-            sort(m.aaa);
-            for (int i =m.aaa.size()-1; i > 0 ; i--)
+            for (int i = 0; i < args.length; i++)
             {
-                if(m.isPrime((Long) m.aaa.get(i)))
-                {
-                    System.out.println("Максимальный делитель:"+m.aaa.get(i));
-                    return;
-                }
+                 num = Long.valueOf(args[i]);
+                testArg(num);
+
+
             }
 
 
