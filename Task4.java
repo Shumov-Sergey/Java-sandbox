@@ -58,7 +58,7 @@ public boolean isPol(int a)
 
 
 //Тут тоже не запустится
-    public void main()
+    public void run()
 
     {
         this.getListPol();
