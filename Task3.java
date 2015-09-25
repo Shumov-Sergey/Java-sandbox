@@ -81,7 +81,7 @@ public class Task3
 main method should be static
 чтоб обратиться к методу класса изнутри нужно использовать this.testArg(num);
  */
-        public void main(String[] args)
+        public void run(String[] args)
 
         {
 
