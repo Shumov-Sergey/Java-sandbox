@@ -5,11 +5,9 @@ import static java.lang.Math.*;
  * Created by Anton on 23.09.2015.
  */
 public class Task5 {
-    //аналогично
-    public static ArrayList<Integer> factorList = new ArrayList<Integer>();
 
     public static ArrayList<Integer> toFactor(int number) {
-        ArrayList<Integer> result = new ArrayList<Integer>();
+        ArrayList<Integer> result = new ArrayList<>();
         int i = 2;
 
         while(i <= number) {
@@ -27,12 +25,13 @@ public class Task5 {
         return result;
     }
 
-    public static void addFactorList(ArrayList<Integer> factor){
+    public static ArrayList<Integer> addFactorList(ArrayList<Integer> factor, ArrayList<Integer> factorList){
 
         for (int i = 0; i < factor.size(); i++) {
 
             int count1 = Collections.frequency(factorList, factor.get(i));
             int count2 = Collections.frequency(factor, factor.get(i));
+
             int diff = count1-count2;
 
             while(diff < 0) {
@@ -41,14 +40,18 @@ public class Task5 {
             }
         }
 
+        return factorList;
+
     }
 
     public static long getResult(int number) {
 
+        ArrayList<Integer> factorList = new ArrayList<>();
+
         for(int i = 1; i <= number; i++) {
 
             ArrayList<Integer> test = toFactor(i);
-            addFactorList(test);
+            factorList = addFactorList(test, factorList);
         }
 
         long result = 1;
@@ -73,7 +76,6 @@ public class Task5 {
         System.out.println("Время окончания: " + endTime + " мс");
         System.out.println("Длительность расчета: " + (endTime - startTime) + " мс");
         System.out.println("Результат: " + result);
-
 
     }
 }
