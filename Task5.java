@@ -81,7 +81,7 @@ public class Task5 {
 
 
     //и тут
-    public void main(String[] args)
+    public void run(String[] args)
 
     {
 
