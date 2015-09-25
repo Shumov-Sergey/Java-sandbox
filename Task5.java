@@ -100,9 +100,9 @@ implements   Runnable
 
         int s = 1;
         // последовательно перемножаем все делители
-        for (int i = 0; i < globalDels.size(); i++) {
+        for (int i = 0; i < this.globalDels.size(); i++) {
 
-            s = s * globalDels.get(i);
+            s = s * this.globalDels.get(i);
         }
 
         long timeend=System.currentTimeMillis();
