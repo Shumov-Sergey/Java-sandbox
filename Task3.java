@@ -7,14 +7,6 @@ import java.util.Collections;
 import static java.lang.Math.*;
 
 public class Task3 {
-    /*
-            Зачем вытаскивать divisorsList в поля класса?
-            Если в рамках ОДНОЙ задачи нужно несколько раз найти делители разных чисел, то в divisorsList они будут добавляться один за другим
-            А ты еще и объявил его static, это значит, что данный массив будет один для ВСЕХ задач
-            Решение проблемы public static ArrayList<Integer> findAllDivisors,
-            В скобках <> указывается тип хранимых объектов, по умолчанию Object,но лучше указывать
-     */
-    static ArrayList divisorsList = new ArrayList();
 
     public static boolean isPrime(long n) {
 
@@ -33,7 +25,9 @@ public class Task3 {
         return true;
     }
 
-    public static void findAllDivisors(long num) {
+    public static ArrayList<Long> findAllDivisors(long num) {
+
+        ArrayList<Long> divisorsList = new ArrayList();
 
         long startTime = System.currentTimeMillis();
         System.out.println("Время старта: " + startTime + " мс");
@@ -53,6 +47,8 @@ public class Task3 {
         long endTime = System.currentTimeMillis();
         System.out.println("Время окончания: " + endTime + " мс");
         System.out.println("Длительность расчета: " + (endTime - startTime) + " мс");
+
+        return divisorsList;
     }
 
     public static void main(String args[]) {
@@ -60,12 +56,12 @@ public class Task3 {
         System.out.println("Задача #3");
 
         long num = new Long("600851475143");
-        findAllDivisors(num);
+        ArrayList<Long> divisorsList = findAllDivisors(num);
 
         Collections.sort(divisorsList);
 
         for (int i = divisorsList.size() - 1; i > 0; i--) {
-            long divisor = (long)divisorsList.get(i);
+            long divisor = divisorsList.get(i);
             if(isPrime(divisor)){
                 System.out.println("Результат: " + divisor);
                 break;
