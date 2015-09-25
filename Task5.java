@@ -6,12 +6,19 @@ import java.util.Collections;
 /**
  * Created by miroshnichenko on 23.09.2015.
  */
-public class Task5 {
+public class Task5
+implements   Runnable
+{
 
 
+    Task5(String[] args)
+    {
+       this.mnoz = args.clone();
 
+    }
+    
     public ArrayList<Integer> globalDels = new ArrayList();
-
+    String[] mnoz;
 
 
 
@@ -57,11 +64,7 @@ public class Task5 {
 
         }
 
-         /*
-            Такой вопрос, какое обоснование выносить globalDels в класс, можно же сделать так же определить его в функции, как localDels?
-            И еще, у каждого метода свое названчение. getDelis в предыдущей задаче он выполнял одно, в этой уже другое.
-            Лучше определить еще один метод, который будет выполнять код ниже
-         */
+
         /*
             Последовательно перебираем все значения массива простых  делителей
             Сравниваем с глобальным массивом.
@@ -80,26 +83,26 @@ public class Task5 {
     }
 
 
-    //и тут
-    public void run(String[] args)
 
+    public  void run()
     {
+
+
 
         // при написании алгоритма использовалось http://math-prosto.ru/?page=pages/find_nod_and_nok/find_nok.php .
         long timestart=System.currentTimeMillis();
         // список делителей для которых ищем значение
-        //тут нужен this
-        for (int i = 0; i < args.length; i++) {
-            getDelis(Integer.valueOf(args[i]));
+
+        for (int i = 0; i < mnoz.length; i++) {
+            this.getDelis(Integer.valueOf(mnoz[i]));
         }
 
 
         int s = 1;
-        //а тут this убрать, если хочешь обратиться к этому свойству, придется создать новый объект класса Task5
         // последовательно перемножаем все делители
-        for (int i = 0; i < this.globalDels.size(); i++) {
+        for (int i = 0; i < globalDels.size(); i++) {
 
-            s = s * this.globalDels.get(i);
+            s = s * globalDels.get(i);
         }
 
         long timeend=System.currentTimeMillis();
@@ -109,4 +112,6 @@ public class Task5 {
 
 
     }
+
+
 }
