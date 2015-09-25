@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Task4 {
-    //Аналогично
-    public static ArrayList<Integer> palindromeList = new ArrayList();
 
     public static boolean isPalindrome(int num) {
 
@@ -21,7 +19,9 @@ public class Task4 {
 
     }
 
-    public static void findAllPalindroms() {
+    public static ArrayList<Integer> findAllPalindroms() {
+
+        ArrayList<Integer> palindromeList = new ArrayList();
 
         for(int i = 999; i > 99; i--) {
             for(int j = i; j > 99; j--) {
@@ -35,9 +35,11 @@ public class Task4 {
             }
         }
 
+        return palindromeList;
+
     }
 
-    public static int getMaxPalindrome() {
+    public static int getMaxPalindrome(ArrayList<Integer> palindromeList) {
 
         Collections.sort(palindromeList);
         return palindromeList.get(palindromeList.size() - 1);
@@ -49,10 +51,10 @@ public class Task4 {
         long startTime = System.currentTimeMillis();
         System.out.println("Время старта: " + startTime + " мс");
         System.out.println("Промежуточные результаты:");
-        findAllPalindroms();
+        ArrayList<Integer> palindromeList = findAllPalindroms();
         long endTime = System.currentTimeMillis();
         System.out.println("Время окончания: " + endTime + " мс");
         System.out.println("Длительность расчета: " + (endTime - startTime) + " мс");
-        System.out.println("Результат: " + getMaxPalindrome());
+        System.out.println("Результат: " + getMaxPalindrome(palindromeList));
     }
 }
