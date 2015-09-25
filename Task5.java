@@ -18,7 +18,7 @@ implements   Runnable
     }
     
     public ArrayList<Integer> globalDels = new ArrayList();
-    String[] mnoz;
+    private String[] mnoz;
 
 
 
